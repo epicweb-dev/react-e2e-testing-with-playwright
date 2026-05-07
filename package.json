@@ -1,14 +1,27 @@
 {
-  "name": "e2e-react-application-testing-with-playwright",
+  "name": "react-e2e-testing-with-playwright",
   "private": true,
   "epicshop": {
-    "title": "E2E React Testing with Playwright",
+    "title": "React E2E Testing with Playwright",
     "subtitle": "Test React applications end-to-end",
-    "githubRepo": "https://github.com/epicweb-dev/e2e-react-application-testing-with-playwright",
+    "githubRepo": "https://github.com/epicweb-dev/react-e2e-testing-with-playwright",
     "instructor": {
       "name": "Artem Zakharchenko",
       "avatar": "/images/instructor.png",
       "xHandle": "kettanaito"
+    },
+    "onboardingVideo": "https://www.epicweb.dev/tips/get-started-with-the-epic-workshop-app",
+    "product": {
+      "host": "www.epicweb.dev",
+      "slug": "react-end-to-end-testing-with-playwright",
+      "displayName": "EpicWeb.dev",
+      "displayNameShort": "Epic Web",
+      "logo": "/logo.svg",
+      "discordChannelId": "1161045224907341972",
+      "discordTags": [
+        "1161046174439063593",
+        "1501948638497210378"
+      ]
     }
   },
   "type": "module",
