@@ -13,7 +13,7 @@
     "onboardingVideo": "https://www.epicweb.dev/tips/get-started-with-the-epic-workshop-app",
     "product": {
       "host": "www.epicweb.dev",
-      "slug": "react-e2e",
+      "slug": "react-end-to-end-testing-with-playwright",
       "displayName": "EpicWeb.dev",
       "displayNameShort": "Epic Web",
       "logo": "/logo.svg",
