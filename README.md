@@ -50,7 +50,7 @@ variable and how to fix it here for [windows][win-path] or
 Use the Epic Workshop CLI to get this setup:
 
 ```sh nonumber
-npx --yes epicshop@latest add e2e-react-application-testing-with-playwright
+npx --yes epicshop@latest add react-e2e-testing-with-playwright
 ```
 
 If you experience errors here, please open [an issue][issue] with as many
@@ -67,13 +67,13 @@ Learn all about the workshop app on the
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
 [git]: https://git-scm.com/
-[build-badge]: https://img.shields.io/github/actions/workflow/status/epicweb-dev/e2e-react-application-testing-with-playwright/validate.yml?branch=main&logo=github&style=flat-square
-[build]: https://github.com/epicweb-dev/e2e-react-application-testing-with-playwright/actions?query=workflow%3Avalidate
+[build-badge]: https://img.shields.io/github/actions/workflow/status/epicweb-dev/react-e2e-testing-with-playwright/validate.yml?branch=main&logo=github&style=flat-square
+[build]: https://github.com/epicweb-dev/react-e2e-testing-with-playwright/actions?query=workflow%3Avalidate
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
-[license]: https://github.com/epicweb-dev/e2e-react-application-testing-with-playwright/blob/main/LICENSE
+[license]: https://github.com/epicweb-dev/react-e2e-testing-with-playwright/blob/main/LICENSE
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
 [coc]: https://kentcdodds.com/conduct
 [win-path]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
 [mac-path]: http://stackoverflow.com/a/24322978/971592
-[issue]: https://github.com/epicweb-dev/e2e-react-application-testing-with-playwright/issues/new
+[issue]: https://github.com/epicweb-dev/react-e2e-testing-with-playwright/issues/new
 <!-- prettier-ignore-end -->
