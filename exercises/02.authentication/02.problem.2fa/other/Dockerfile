@@ -1,7 +1,7 @@
 # This file is moved to the root directory before building the image
 
 # base node image
-FROM node:22-bookworm-slim as base
+FROM node:26-bookworm-slim as base
 
 # set for base and all layer that inherit from it
 ENV NODE_ENV production
