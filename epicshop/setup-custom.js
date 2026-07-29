@@ -6,10 +6,8 @@ import {
 	setPlayground,
 } from '@epic-web/workshop-utils/apps.server'
 import fsExtra from 'fs-extra'
-import { generateAppArtifacts } from './generate-app-artifacts.js'
 
 await warm()
-await generateAppArtifacts()
 
 const allApps = await getApps()
 const problemApps = allApps.filter(isProblemApp)
