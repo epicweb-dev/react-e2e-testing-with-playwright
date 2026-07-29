@@ -66,6 +66,12 @@
     "@esbuild/win32-x64": "^0.25.12",
     "@rollup/rollup-darwin-x64": "^4.52.5",
     "@rollup/rollup-linux-x64-gnu": "^4.52.5",
-    "@rollup/rollup-win32-x64-msvc": "^4.52.5"
+    "@rollup/rollup-win32-x64-msvc": "^4.52.5",
+    "@tailwindcss/oxide-darwin-x64": "^4.1.16",
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.1.16",
+    "@tailwindcss/oxide-win32-x64-msvc": "^4.1.16",
+    "lightningcss-darwin-x64": "^1.30.2",
+    "lightningcss-linux-x64-gnu": "^1.30.2",
+    "lightningcss-win32-x64-msvc": "^1.30.2"
   }
 }

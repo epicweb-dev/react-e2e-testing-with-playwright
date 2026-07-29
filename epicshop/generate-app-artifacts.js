@@ -18,6 +18,10 @@ for (const app of allApps) {
 	const prismaSchema = path.join(app.fullPath, 'prisma', 'schema.prisma')
 	if (await fsExtra.pathExists(prismaSchema)) {
 		console.log(`Generating Prisma client for ${app.relativePath}`)
+		await execa('npm', ['exec', '--', 'prisma', 'migrate', 'deploy'], {
+			cwd: app.fullPath,
+			stdio: 'inherit',
+		})
 		await execa('npm', ['exec', '--', 'prisma', 'generate', '--sql'], {
 			cwd: app.fullPath,
 			stdio: 'inherit',
