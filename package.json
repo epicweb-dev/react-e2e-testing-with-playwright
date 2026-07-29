@@ -35,7 +35,7 @@
     "test:e2e:run": "pkgmgr run test:e2e:run --silent --prefix playground",
     "setup": "pkgmgrx epicshop setup",
     "setup:custom": "node ./epicshop/setup-custom.js",
-    "generate": "node ./epicshop/generate-app-artifacts.js",
+    "generate": "node ./epicshop/run-generate-app-artifacts.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc -b",
