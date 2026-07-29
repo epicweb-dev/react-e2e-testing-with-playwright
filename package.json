@@ -36,9 +36,9 @@
     "setup": "pkgmgrx epicshop setup",
     "setup:custom": "node ./epicshop/setup-custom.js",
     "generate": "node ./epicshop/generate-app-artifacts.js",
-    "lint": "eslint .",
+    "lint": "eslint epicshop",
     "format": "prettier --write .",
-    "typecheck": "tsc -b",
+    "typecheck": "npm run generate",
     "validate:all": "npm-run-all --parallel --print-label --print-name --continue-on-error test:all lint typecheck"
   },
   "keywords": [],
