@@ -35,6 +35,7 @@
     "test:e2e:run": "pkgmgr run test:e2e:run --silent --prefix playground",
     "setup": "pkgmgrx epicshop setup",
     "setup:custom": "node ./epicshop/setup-custom.js",
+    "generate": "node ./epicshop/generate-app-artifacts.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "tsc -b",
@@ -54,9 +55,23 @@
   "devDependencies": {
     "@epic-web/config": "^1.19.0",
     "eslint": "^9.24.0",
+    "pkgmgr": "^1.1.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3",
-    "pkgmgr": "^1.1.1"
+    "typescript": "^5.8.3"
   },
-  "prettier": "@epic-web/config/prettier"
+  "prettier": "@epic-web/config/prettier",
+  "optionalDependencies": {
+    "@esbuild/darwin-x64": "^0.25.12",
+    "@esbuild/linux-x64": "^0.25.12",
+    "@esbuild/win32-x64": "^0.25.12",
+    "@rollup/rollup-darwin-x64": "^4.52.5",
+    "@rollup/rollup-linux-x64-gnu": "^4.52.5",
+    "@rollup/rollup-win32-x64-msvc": "^4.52.5",
+    "@tailwindcss/oxide-darwin-x64": "^4.1.16",
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.1.16",
+    "@tailwindcss/oxide-win32-x64-msvc": "^4.1.16",
+    "lightningcss-darwin-x64": "^1.30.2",
+    "lightningcss-linux-x64-gnu": "^1.30.2",
+    "lightningcss-win32-x64-msvc": "^1.30.2"
+  }
 }
