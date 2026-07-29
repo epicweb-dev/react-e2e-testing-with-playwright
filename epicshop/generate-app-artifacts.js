@@ -1,11 +1,15 @@
 import path from 'node:path'
-import { getApps } from '@epic-web/workshop-utils/apps.server'
+import {
+	getApps,
+	isSolutionApp,
+} from '@epic-web/workshop-utils/apps.server'
 import { execa } from 'execa'
 import fsExtra from 'fs-extra'
 
 const allApps = await getApps()
+const solutionApps = allApps.filter(isSolutionApp)
 
-for (const app of allApps) {
+for (const app of solutionApps) {
 	const reactRouterConfig = path.join(app.fullPath, 'react-router.config.ts')
 	if (await fsExtra.pathExists(reactRouterConfig)) {
 		console.log(`Generating React Router types for ${app.relativePath}`)
