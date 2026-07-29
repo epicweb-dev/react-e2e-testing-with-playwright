@@ -24,7 +24,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.14.0
+          node-version: 26
 
       # SKIP_PLAYGROUND keeps typecheck/lint meaningful: problem playground apps
       # intentionally fail solution tests/types, which would create false CI red.
@@ -62,19 +62,15 @@ jobs:
             attempt=$((attempt + 1))
           done
 
-      # The root tsc project includes intentionally incomplete exercise tests.
-      # Running each framework generator validates the deploy-relevant types
-      # without treating workshop problem code as a production type failure.
-      - name: ʦ Generate app types
-        run: npm run generate
+      - name: ʦ TypeScript
+        run: npm run typecheck
         working-directory: ./workshop
 
       - name: ⬣ Lint
-        # Lint the workshop tooling changed and executed by this setup job.
-        # A single ESLint process over every duplicated app exceeds the runner's
-        # heap and reports intentional problem-app failures.
-        run: npm exec eslint -- epicshop
+        run: npm run lint
         working-directory: ./workshop
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
 
   tests:
     name: 🧪 Test
@@ -87,10 +83,31 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.14.0
+          node-version: 26
 
       - name: 📦 Install dependencies
         run: npm ci
+
+      - name: 🎭 Install Playwright browser
+        if: ${{ hashFiles('epicshop/test.js') != '' }}
+        run: npx playwright install --with-deps chromium
+
+      - name: ◭ Generate Prisma clients
+        if: ${{ hashFiles('epicshop/test.js') != '' }}
+        run: |
+          set -euo pipefail
+          shopt -s globstar nullglob
+          schemas=(./exercises/**/*.solution.*/prisma/schema.prisma)
+          if [ "${#schemas[@]}" -eq 0 ]; then
+            echo "No solution-app Prisma schemas found; skipping Prisma client generation."
+            exit 0
+          fi
+          for schema in "${schemas[@]}"; do
+            app_dir="${schema%/prisma/schema.prisma}"
+            echo "::group::prisma generate in ${app_dir}"
+            (cd "$app_dir" && npx prisma generate)
+            echo "::endgroup::"
+          done
 
       # Workshops ship epicshop/test.js (not .ts). `..s` runs solution apps only.
       - name: 🧪 Run solution tests
